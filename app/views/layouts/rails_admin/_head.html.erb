@@ -7,6 +7,9 @@
    when :webpacker %>
   <%= stylesheet_pack_tag "rails_admin", data: {'turbo-track': 'reload'} %>
   <%= javascript_pack_tag "rails_admin", defer: true, data: {'turbo-track': 'reload'} %>
+<% when :vite %>
+  <%= vite_javascript_tag 'rails_admin' %>
+  <%= vite_stylesheet_tag 'rails_admin', media: 'all' %>
 <% when :sprockets %>
   <% handle_asset_dependency_error do %>
     <%= stylesheet_link_tag "rails_admin/application.css", media: :all, data: {'turbo-track': 'reload'} %>
